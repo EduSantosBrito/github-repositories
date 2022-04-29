@@ -27,6 +27,6 @@
     "downlevelIteration": true
   },
   "include": ["src"],
-  "exclude": [".eslintrc.js", "vite.config.js"],
+  "exclude": [".eslintrc.js", "vite.config.js", "commitlint.config.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
