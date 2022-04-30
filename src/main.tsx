@@ -6,9 +6,17 @@ import { BrowserRouter } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import App from "./App";
 import { store } from "./store";
-
+import montHeavyFontSrc from "./assets/fonts/Mont-HeavyDEMO.otf";
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Mont';
+    src: url(${montHeavyFontSrc}) format('opentype');
+    font-style: bold;
+    font-weight: bold;
+    font-display: swap;
+  }
+
   html {
     font-size: 62.5%;
   }
