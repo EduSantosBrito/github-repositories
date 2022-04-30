@@ -24,7 +24,7 @@ export const HeaderContainer = styled.header`
 `;
 
 export const HeaderTitle = styled.h1`
-    color: white;
+    color: var(--on-white);
     max-width: 63rem;
     text-align: center;
     font-family: "Mont";

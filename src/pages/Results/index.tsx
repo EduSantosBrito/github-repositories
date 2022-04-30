@@ -31,9 +31,7 @@ const Results = () => {
     return (
         <div>
             <SearchInput
-                defaultValue={repository}
-                label="Search repositories"
-                placeholder="Write the repository name"
+                placeholder="Search for repositories"
                 onChange={handleRepositoryChange}
                 onSearch={handleRepositoryChange}
             />

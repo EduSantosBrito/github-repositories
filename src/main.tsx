@@ -9,6 +9,17 @@ import { store } from "./store";
 import montHeavyFontSrc from "./assets/fonts/Mont-HeavyDEMO.otf";
 
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --on-white: #ffffff;
+    --on-background-gray: #101518;
+    --on-typography: #576471;
+    --on-dark-gray: #161D25;
+    --on-light-gray: #3A4653;
+    --on-darker-blue: #133A51;
+    --on-dark-blue: #10AAFF;
+    --on-light-blue: #4AE5FF;
+  }
+
   @font-face {
     font-family: 'Mont';
     src: url(${montHeavyFontSrc}) format('opentype');

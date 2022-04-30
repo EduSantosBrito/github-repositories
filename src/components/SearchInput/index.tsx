@@ -1,16 +1,15 @@
 import { ChangeEvent, useEffect, useMemo, useState } from "react";
 import debounce from "lodash.debounce";
+import * as S from "./styled";
 
 type SearchInputProps = {
-    label: string;
-    defaultValue?: string;
     placeholder?: string;
     onChange?: (value: string) => void;
     onSearch?: (value: string) => void;
 };
 
-const SearchInput = ({ onChange, label, placeholder, defaultValue = "", onSearch }: SearchInputProps) => {
-    const [value, setValue] = useState<string>(defaultValue);
+const SearchInput = ({ onChange, placeholder, onSearch }: SearchInputProps) => {
+    const [value, setValue] = useState<string>("");
     const debouncedOnChange = useMemo(() => (onChange ? debounce(onChange, 1000) : null), []);
 
     useEffect(() => {
@@ -28,13 +27,26 @@ const SearchInput = ({ onChange, label, placeholder, defaultValue = "", onSearch
     };
 
     return (
-        <div>
-            <label htmlFor="search-input">{label}</label>
-            <input name="search-input" id="search-input" type="search" value={value} placeholder={placeholder} onChange={handleOnChange} />
-            <button type="button" onClick={handleOnClick}>
+        <S.SearchContainer>
+            <S.SearchInputContainer role="search">
+                <S.SearchLabel aria-labelledby="search-title" htmlFor="search-input">
+                    <S.SearchIcon />
+                </S.SearchLabel>
+                <S.SearchInput
+                    aria-label="Search input"
+                    name="search-input"
+                    id="search-input"
+                    type="text"
+                    value={value}
+                    placeholder={placeholder}
+                    onChange={handleOnChange}
+                    required
+                />
+            </S.SearchInputContainer>
+            <S.SearchButton type="button" aria-label="Search submit button" onClick={handleOnClick}>
                 Search
-            </button>
-        </div>
+            </S.SearchButton>
+        </S.SearchContainer>
     );
 };
 

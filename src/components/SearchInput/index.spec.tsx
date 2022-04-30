@@ -5,25 +5,24 @@ import SearchInput from "./index";
 
 describe("SearchInput", async () => {
     it("should render the input", () => {
-        render(<SearchInput label="Search input" />);
-        expect(screen.getByText("Search input")).toBeInTheDocument();
+        render(<SearchInput />);
         expect(
-            screen.getByRole("searchbox", {
+            screen.getByRole("textbox", {
                 name: /search input/i,
             }),
         ).toBeInTheDocument();
     });
     it("should render the input with placeholder", () => {
-        render(<SearchInput label="Search input" placeholder="Write your username" />);
-        const input: HTMLInputElement = screen.getByRole("searchbox", {
+        render(<SearchInput placeholder="Write your username" />);
+        const input: HTMLInputElement = screen.getByRole("textbox", {
             name: /search input/i,
         });
         expect(input).toBeInTheDocument();
         expect(input).toHaveAttribute("placeholder", "Write your username");
     });
     it("should change input value", async () => {
-        render(<SearchInput label="Search input" />);
-        const input: HTMLInputElement = screen.getByRole("searchbox", {
+        render(<SearchInput />);
+        const input: HTMLInputElement = screen.getByRole("textbox", {
             name: /search input/i,
         });
         expect(input).toBeInTheDocument();
@@ -32,8 +31,8 @@ describe("SearchInput", async () => {
     });
     it("should call onChange only once", async () => {
         const onChange = vi.fn();
-        render(<SearchInput label="Search input" onChange={onChange} />);
-        const input: HTMLInputElement = screen.getByRole("searchbox", {
+        render(<SearchInput onChange={onChange} />);
+        const input: HTMLInputElement = screen.getByRole("textbox", {
             name: /search input/i,
         });
         expect(input).toBeInTheDocument();
@@ -43,7 +42,7 @@ describe("SearchInput", async () => {
     });
     it("should call onSearch when click on button", async () => {
         const onSearch = vi.fn();
-        render(<SearchInput label="Search input" onSearch={onSearch} />);
+        render(<SearchInput onSearch={onSearch} />);
         const button: HTMLInputElement = screen.getByRole("button", {
             name: /search/i,
         });

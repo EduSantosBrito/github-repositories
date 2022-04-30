@@ -32,8 +32,7 @@ const Homepage = () => {
             <S.HeaderContainer>
                 <S.HeaderTitle>The best repositories are here</S.HeaderTitle>
                 <SearchInput
-                    label="Search repositories"
-                    placeholder="Write the repository name"
+                    placeholder="Search for repositories"
                     onChange={handleRepositoryChange}
                     onSearch={handleRepositoryChange}
                 />
