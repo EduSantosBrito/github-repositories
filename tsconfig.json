@@ -27,6 +27,6 @@
     "downlevelIteration": true
   },
   "include": ["src"],
-  "exclude": [".eslintrc.js", "vite.config.js", "commitlint.config.js"],
+  "exclude": [".eslintrc.js", "vite.config.js", "commitlint.config.js", "cypress/**/*.spec.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
