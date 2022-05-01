@@ -1,8 +1,4 @@
 import styled from "styled-components";
-import StarIconSrc from "../../assets/icons/icon-star.svg";
-import EyeIconSrc from "../../assets/icons/icon-eye.svg";
-import ForkIconSrc from "../../assets/icons/icon-fork.svg";
-import IssuesIconSrc from "../../assets/icons/icon-issues.svg";
 
 export const Container = styled.li`
     box-sizing: border-box;
@@ -110,14 +106,6 @@ export const StarRepositoryStats = styled(RepositoryStats)`
         top: 2.4rem;
     }
 `;
-
-export const StarIcon = styled.img.attrs({ src: StarIconSrc })``;
-
-export const EyeIcon = styled.img.attrs({ src: EyeIconSrc })``;
-
-export const ForkIcon = styled.img.attrs({ src: ForkIconSrc })``;
-
-export const IssuesIcon = styled.img.attrs({ src: IssuesIconSrc })``;
 
 export const RepositoryLanguage = styled.div`
     display: flex;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import SearchIconSrc from "../../assets/icons/icon-search.svg";
 
 export const SearchContainer = styled.div`
     display: flex;
@@ -62,5 +61,3 @@ export const SearchButton = styled.button`
     color: var(--on-dark-blue);
     font-size: clamp(1.2rem, 4vw, 1.8rem); ;
 `;
-
-export const SearchIcon = styled.img.attrs({ src: SearchIconSrc })``;

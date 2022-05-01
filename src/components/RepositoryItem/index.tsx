@@ -1,6 +1,7 @@
 import { MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { RepositoryData } from "../../hooks/usePublicRepositories";
+import Icon from "../Icon";
 import * as S from "./styled";
 
 type RepositoryItemProps = {
@@ -46,15 +47,15 @@ const RepositoryItem = ({ data }: RepositoryItemProps) => {
             )}
             <S.RepositoryFooter>
                 <S.RepositoryStats>
-                    <S.IssuesIcon aria-hidden="true" />
+                    <Icon variant="issues" aria-hidden="true" />
                     <p aria-label="Repository open issues count">{data.open_issues_count}</p>
                 </S.RepositoryStats>
                 <S.RepositoryStats>
-                    <S.EyeIcon aria-hidden="true" />
+                    <Icon variant="eye" aria-hidden="true" />
                     <p aria-label="Repository watchers count">{data.watchers_count}</p>
                 </S.RepositoryStats>
                 <S.RepositoryStats>
-                    <S.ForkIcon aria-hidden="true" />
+                    <Icon variant="fork" aria-hidden="true" />
                     <p aria-label="Repository forks count">{data.forks_count}</p>
                 </S.RepositoryStats>
                 {Boolean(data.language) && (
@@ -64,7 +65,7 @@ const RepositoryItem = ({ data }: RepositoryItemProps) => {
                 )}
             </S.RepositoryFooter>
             <S.StarRepositoryStats>
-                <S.StarIcon aria-hidden="true" />
+                <Icon variant="star" aria-hidden="true" />
                 <p aria-label="Repository stars count">{data.stargazers_count}</p>
             </S.StarRepositoryStats>
         </S.Container>

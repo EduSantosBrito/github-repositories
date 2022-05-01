@@ -8,6 +8,7 @@ import Loader from "../../components/Loader";
 import * as S from "./styled";
 import { MouseEvent } from "react";
 import Header from "../../components/Header";
+import Icon from "../../components/Icon";
 
 const Repository = () => {
     const navigate = useNavigate();
@@ -72,19 +73,19 @@ const Repository = () => {
                     </S.RepositoryTitle>
                     <S.RepositoryStatsContainer>
                         <S.RepositoryStats>
-                            <S.IssuesIcon aria-hidden="true" />
+                            <Icon variant="issues" aria-hidden="true" />
                             <p aria-label="Repository open issues count">{repositoryData.open_issues_count}</p>
                         </S.RepositoryStats>
                         <S.RepositoryStats>
-                            <S.EyeIcon aria-hidden="true" />
+                            <Icon variant="eye" aria-hidden="true" />
                             <p aria-label="Repository watchers count">{repositoryData.watchers_count}</p>
                         </S.RepositoryStats>
                         <S.RepositoryStats>
-                            <S.ForkIcon aria-hidden="true" />
+                            <Icon variant="fork" aria-hidden="true" />
                             <p aria-label="Repository forks count">{repositoryData.forks_count}</p>
                         </S.RepositoryStats>
                         <S.RepositoryStats>
-                            <S.StarIcon aria-hidden="true" />
+                            <Icon variant="star" aria-hidden="true" />
                             <p aria-label="Repository stars count">{repositoryData.stargazers_count}</p>
                         </S.RepositoryStats>
                     </S.RepositoryStatsContainer>

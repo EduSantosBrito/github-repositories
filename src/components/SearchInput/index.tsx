@@ -1,6 +1,7 @@
 import { ChangeEvent, useEffect, useMemo, useState } from "react";
 import debounce from "lodash.debounce";
 import * as S from "./styled";
+import Icon from "../Icon";
 
 type SearchInputProps = {
     placeholder?: string;
@@ -41,7 +42,7 @@ const SearchInput = ({ onChange, placeholder, onSearch }: SearchInputProps) => {
         <S.SearchContainer>
             <S.SearchInputContainer role="search">
                 <S.SearchLabel aria-labelledby="search-title" htmlFor="search-input">
-                    <S.SearchIcon />
+                    <Icon variant="search" />
                 </S.SearchLabel>
                 <S.SearchInput
                     aria-label="Search input"
