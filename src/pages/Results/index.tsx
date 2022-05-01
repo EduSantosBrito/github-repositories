@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Loader from "../../components/Loader";
+import NotFound from "../../components/NotFound";
 import Pagination from "../../components/Pagination";
 import RepositoryItem from "../../components/RepositoryItem";
 import SearchInput from "../../components/SearchInput";
@@ -55,10 +56,13 @@ const Results = () => {
                     <Loader height="calc(100vh - 34.6rem)" />
                 ) : (
                     <S.ResultListContainer>
-                        {data?.items.map(item => (
+                        {!data?.items.length && <NotFound />}
+                        {data?.items?.map(item => (
                             <RepositoryItem key={item.id} data={item} />
                         ))}
-                        <Pagination page={page} totalPages={totalPages} onPageChange={newPage => dispatch(setPage(newPage))} />
+                        {!!data?.items.length && (
+                            <Pagination page={page} totalPages={totalPages} onPageChange={newPage => dispatch(setPage(newPage))} />
+                        )}
                     </S.ResultListContainer>
                 )}
             </S.ResultContainer>

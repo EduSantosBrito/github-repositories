@@ -9,6 +9,7 @@ import * as S from "./styled";
 import { MouseEvent } from "react";
 import Header from "../../components/Header";
 import Icon from "../../components/Icon";
+import NotFound from "../../components/NotFound";
 
 const Repository = () => {
     const navigate = useNavigate();
@@ -28,13 +29,15 @@ const Repository = () => {
         return <Loader height="calc(100vh - 80.6rem)" />;
     }
 
-    if (!markdown || !repositoryData) {
+    if (!repositoryData) {
         return <Navigate to="/" />;
     }
 
     const handleGoBack = () => {
         navigate("/results");
     };
+
+    console.log({ markdown });
 
     const handlePropagation = (event: MouseEvent<HTMLElement>) => {
         event.stopPropagation();
@@ -90,9 +93,13 @@ const Repository = () => {
                         </S.RepositoryStats>
                     </S.RepositoryStatsContainer>
                 </S.InfoContainer>
-                <ReactMarkdown className="markdown-body" rehypePlugins={[rehypeRaw]}>
-                    {markdown}
-                </ReactMarkdown>
+                {markdown ? (
+                    <ReactMarkdown className="markdown-body" rehypePlugins={[rehypeRaw]}>
+                        {markdown}
+                    </ReactMarkdown>
+                ) : (
+                    <NotFound />
+                )}
             </S.RepositoryContainer>
         </S.Container>
     );
