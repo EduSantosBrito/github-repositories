@@ -17,6 +17,8 @@ export const LastRepositoriesContainer = styled.main`
     height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 7.2rem 10% 10rem;
     background-color: var(--on-background-gray);
     gap: 3.2rem;
@@ -31,6 +33,7 @@ export const RepositoryListContainer = styled.ul`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    max-width: 100rem;
     gap: 3.2rem;
 `;
 

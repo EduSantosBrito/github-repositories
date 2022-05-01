@@ -31,6 +31,7 @@ export const ResultBack = styled.a`
     color: var(--on-white);
     transition: color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
     cursor: pointer;
+    align-self: flex-start;
     &:hover {
         color: var(--on-lighter-gray);
     }

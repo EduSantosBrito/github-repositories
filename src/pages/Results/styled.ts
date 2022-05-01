@@ -9,6 +9,8 @@ export const ResultContainer = styled.main`
     height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 7.2rem 10% 10rem;
     background-color: var(--on-background-gray);
     gap: 3.2rem;
@@ -23,6 +25,7 @@ export const ResultListContainer = styled.ul`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    max-width: 100rem;
     gap: 3.2rem;
 `;
 
@@ -48,6 +51,7 @@ export const ResultBack = styled.a`
     color: var(--on-white);
     transition: color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
     cursor: pointer;
+    align-self: flex-start;
     &:hover {
         color: var(--on-lighter-gray);
     }
