@@ -39,16 +39,22 @@ export const LastRepositoriesContainer = styled.main`
     gap: 3.2rem;
 
     @media screen and (min-width: 1024px) {
+        padding: 7.2rem 5% 10rem;
+    }
+
+    @media screen and (min-width: 1440px) {
         padding: 7.2rem 20% 10rem;
-        height: unset;
     }
 `;
 
-export const RepositoryListContainer = styled.div`
+export const RepositoryListContainer = styled.ul`
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 3.2rem;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
     }
 `;

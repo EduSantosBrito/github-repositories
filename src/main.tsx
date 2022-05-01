@@ -15,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
     --on-typography: #576471;
     --on-dark-gray: #161D25;
     --on-light-gray: #3A4653;
+    --on-lighter-gray: #A2A5A8;
+    --on-hover-blue: #0C86CB;
     --on-darker-blue: #133A51;
     --on-dark-blue: #10AAFF;
     --on-light-blue: #4AE5FF;

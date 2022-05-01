@@ -8,8 +8,8 @@ type RequestProps = {
 };
 
 type RepositoryOwner = {
-    avatar_url: string;
     login: string;
+    html_url: string;
 };
 
 export type RepositoryData = {
@@ -18,11 +18,12 @@ export type RepositoryData = {
     watchers_count: number;
     open_issues_count: number;
     stargazers_count: number;
+    forks_count: number;
     name: string;
     description: string | null;
-    visibility: "public" | "private";
     owner: RepositoryOwner;
-    default_branch: string;
+    html_url: string;
+    language: string;
 };
 
 type Response = {
