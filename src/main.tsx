@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%;
+    background-color: var(--on-background-gray);
   }
   html, body, #root {
     width: 100%;
