@@ -5,6 +5,7 @@ import { usePublicRepository } from "../../hooks/usePublicRepository";
 import { useRepositoryReadme } from "../../hooks/useRepositoryReadme";
 import "./github-markdown-style.css";
 import styled from "styled-components";
+import Loader from "../../components/Loader";
 
 const Container = styled.div`
     padding: 50px;
@@ -20,7 +21,7 @@ const Repository = () => {
     }
 
     if (isLoading || isLoadingReadme) {
-        return <div>Loading...</div>;
+        return <Loader height="calc(100vh - 80.6rem)" />;
     }
 
     if (!markdown) {

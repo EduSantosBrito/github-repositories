@@ -6,7 +6,7 @@ import IssuesIconSrc from "../../assets/icons/icon-issues.svg";
 
 export const Container = styled.li`
     box-sizing: border-box;
-    max-width: 50rem;
+    max-width: 44rem;
     width: 100%;
     position: relative;
     list-style: none;

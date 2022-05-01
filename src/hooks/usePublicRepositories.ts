@@ -24,6 +24,7 @@ export type RepositoryData = {
     owner: RepositoryOwner;
     html_url: string;
     language: string;
+    default_branch: string;
 };
 
 type Response = {

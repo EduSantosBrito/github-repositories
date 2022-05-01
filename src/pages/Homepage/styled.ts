@@ -32,6 +32,7 @@ export const HeaderTitle = styled.h1`
 `;
 
 export const LastRepositoriesContainer = styled.main`
+    height: auto;
     display: flex;
     flex-direction: column;
     padding: 7.2rem 10% 10rem;
@@ -48,18 +49,15 @@ export const LastRepositoriesContainer = styled.main`
 `;
 
 export const RepositoryListContainer = styled.ul`
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 3.2rem;
-
-    @media screen and (min-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
 `;
 
 export const LastRepositoriesTitle = styled.h2`
+    text-align: center;
     font-family: "Sarabun";
     font-weight: 600;
     font-size: clamp(1.8rem, 4vw, 2.6rem);
