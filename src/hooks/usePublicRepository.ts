@@ -11,7 +11,7 @@ type Response = RepositoryData;
 
 export const usePublicRepository = ({ username, repository }: RequestProps) => {
     return useQuery<Response>(
-        [GET_USER_PUBLIC_REPOSITORY],
+        [GET_USER_PUBLIC_REPOSITORY, repository],
         async () => {
             const response = await fetch(`https://api.github.com/repos/${username}/${repository}`, {
                 headers: { Accept: "application/vnd.github.v3.text-match+json" },

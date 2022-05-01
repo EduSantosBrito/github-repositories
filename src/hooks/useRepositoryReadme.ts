@@ -9,7 +9,7 @@ type RequestProps = {
 
 export const useRepositoryReadme = ({ username, repository, branch }: RequestProps) => {
     return useQuery<string>(
-        [GET_USER_REPOSITORY_README],
+        [GET_USER_REPOSITORY_README, repository],
         async () => {
             const response = await fetch(`https://raw.githubusercontent.com/${username}/${repository}/${branch}/README.md`);
             return response.text();
