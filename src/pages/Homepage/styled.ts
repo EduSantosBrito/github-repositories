@@ -31,4 +31,31 @@ export const HeaderTitle = styled.h1`
     font-size: clamp(4.5rem, 4vw, 5.6rem);
 `;
 
-export const LastRepositoriesContainer = styled.main``;
+export const LastRepositoriesContainer = styled.main`
+    display: flex;
+    flex-direction: column;
+    padding: 7.2rem 10% 10rem;
+    background-color: var(--on-background-gray);
+    gap: 3.2rem;
+
+    @media screen and (min-width: 1024px) {
+        padding: 7.2rem 20% 10rem;
+        height: unset;
+    }
+`;
+
+export const RepositoryListContainer = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+`;
+
+export const LastRepositoriesTitle = styled.h2`
+    font-family: "Sarabun";
+    font-weight: 600;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--on-white);
+`;

@@ -31,23 +31,19 @@ const Homepage = () => {
         <S.Container>
             <S.HeaderContainer>
                 <S.HeaderTitle>The best repositories are here</S.HeaderTitle>
-                <SearchInput
-                    placeholder="Search for repositories"
-                    onChange={handleRepositoryChange}
-                    onSearch={handleRepositoryChange}
-                />
+                <SearchInput placeholder="Search for repositories" onChange={handleRepositoryChange} onSearch={handleRepositoryChange} />
             </S.HeaderContainer>
             <S.LastRepositoriesContainer>
-                <h2>Brito&apos;s repositories</h2>
+                <S.LastRepositoriesTitle>Brito&apos;s repositories</S.LastRepositoriesTitle>
                 {isLoadingRepositories || isLoadingProfile ? (
                     <div>loading...</div>
                 ) : (
-                    <>
+                    <S.RepositoryListContainer>
                         {repositories?.map(item => (
                             <RepositoryItem key={item.id} data={item} />
                         ))}
                         <Pagination page={page} totalPages={totalPages} onPageChange={newPage => dispatch(setPage(newPage))} />
-                    </>
+                    </S.RepositoryListContainer>
                 )}
             </S.LastRepositoriesContainer>
         </S.Container>
