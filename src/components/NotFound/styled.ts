@@ -11,4 +11,12 @@ export const Container = styled.div`
     & > img {
         width: 50rem;
     }
+
+    & > p {
+        font-family: "Sarabun";
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        font-weight: 600;
+        line-height: clamp(2rem, 1vw, 2.6rem);
+        color: var(--on-white);
+    }
 `;

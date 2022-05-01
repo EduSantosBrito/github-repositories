@@ -54,7 +54,7 @@ export const RepositoryDescription = styled.p`
     font-weight: 400;
     font-size: clamp(1.2rem, 3vw, 1.6rem);
     color: var(--on-white);
-    margin: 0 0 1.6rem 2.4rem;
+    margin: 0 0 1.6rem;
     word-break: break-word;
 
     @media screen and (min-width: 768px) {

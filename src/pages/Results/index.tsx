@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
@@ -12,6 +13,7 @@ import { usePublicRepositories } from "../../hooks/usePublicRepositories";
 import * as S from "./styled";
 
 const Results = () => {
+    const titleRef = useRef<HTMLHeadingElement>(null);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const repository = useSelector((store: RootState) => store.results.repository);
@@ -33,6 +35,13 @@ const Results = () => {
         navigate("/");
     };
 
+    const handlePageChange = (newPage: number) => {
+        dispatch(setPage(newPage));
+        if (titleRef.current) {
+            titleRef.current.scrollIntoView();
+        }
+    };
+
     const totalPages = data ? Math.ceil(data?.total_count / perPage) : 1;
 
     return (
@@ -44,7 +53,7 @@ const Results = () => {
                 <S.ResultBack aria-label="Go to homepage" onClick={handleGoBack}>
                     <p>Go back</p>
                 </S.ResultBack>
-                <S.ResultTitle>Results for &quot;{repository}&quot;</S.ResultTitle>
+                <S.ResultTitle ref={titleRef}>Results for &quot;{repository}&quot;</S.ResultTitle>
                 <S.ResultSpent>
                     {`Results in ${new Intl.DateTimeFormat("en-us", {
                         second: "numeric",
@@ -60,9 +69,7 @@ const Results = () => {
                         {data?.items?.map(item => (
                             <RepositoryItem key={item.id} data={item} />
                         ))}
-                        {!!data?.items.length && (
-                            <Pagination page={page} totalPages={totalPages} onPageChange={newPage => dispatch(setPage(newPage))} />
-                        )}
+                        {!!data?.items.length && <Pagination page={page} totalPages={totalPages} onPageChange={handlePageChange} />}
                     </S.ResultListContainer>
                 )}
             </S.ResultContainer>

@@ -37,8 +37,6 @@ const Repository = () => {
         navigate("/results");
     };
 
-    console.log({ markdown });
-
     const handlePropagation = (event: MouseEvent<HTMLElement>) => {
         event.stopPropagation();
     };
@@ -98,7 +96,7 @@ const Repository = () => {
                         {markdown}
                     </ReactMarkdown>
                 ) : (
-                    <NotFound />
+                    <NotFound title="README.md not found" />
                 )}
             </S.RepositoryContainer>
         </S.Container>

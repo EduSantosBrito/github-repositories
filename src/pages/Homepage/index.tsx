@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
@@ -13,6 +14,7 @@ import { useBritoProfile } from "../../hooks/useBritoProfile";
 import * as S from "./styled";
 
 const Homepage = () => {
+    const titleRef = useRef<HTMLHeadingElement>(null);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { data: repositories, isLoading: isLoadingRepositories } = useBritoLastUpdatedRepositories();
@@ -27,6 +29,13 @@ const Homepage = () => {
         }
     };
 
+    const handlePageChange = (newPage: number) => {
+        dispatch(setPage(newPage));
+        if (titleRef.current) {
+            titleRef.current.scrollIntoView();
+        }
+    };
+
     const totalPages = profile ? Math.ceil(profile?.public_repos / perPage) : 1;
 
     return (
@@ -36,7 +45,7 @@ const Homepage = () => {
                 <SearchInput placeholder="Search for repositories" onChange={handleRepositoryChange} onSearch={handleRepositoryChange} />
             </Header>
             <S.LastRepositoriesContainer>
-                <S.LastRepositoriesTitle>Brito&apos;s repositories</S.LastRepositoriesTitle>
+                <S.LastRepositoriesTitle ref={titleRef}>Brito&apos;s repositories</S.LastRepositoriesTitle>
                 {isLoadingRepositories || isLoadingProfile ? (
                     <Loader height="calc(100vh - 80.6rem)" />
                 ) : (
@@ -44,7 +53,7 @@ const Homepage = () => {
                         {repositories?.map(item => (
                             <RepositoryItem key={item.id} data={item} />
                         ))}
-                        <Pagination page={page} totalPages={totalPages} onPageChange={newPage => dispatch(setPage(newPage))} />
+                        <Pagination page={page} totalPages={totalPages} onPageChange={handlePageChange} />
                     </S.RepositoryListContainer>
                 )}
             </S.LastRepositoriesContainer>
