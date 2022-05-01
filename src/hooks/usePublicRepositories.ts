@@ -31,6 +31,7 @@ type Response = {
     total_count: number;
     incomplete_results: boolean;
     items: RepositoryData[];
+    spent: number;
 };
 
 export const usePublicRepositories = ({ repository }: RequestProps) => {
@@ -44,10 +45,13 @@ export const usePublicRepositories = ({ repository }: RequestProps) => {
             searchParams.set("q", repository);
             searchParams.set("page", page.toString());
             searchParams.set("per_page", perPage.toString());
+            const start = performance.now();
             const response = await fetch(`https://api.github.com/search/repositories?${searchParams.toString()}`, {
                 headers: { Accept: "application/vnd.github.v3.text-match+json" },
             });
-            return response.json();
+            const spent = performance.now() - start;
+            const data = await response.json();
+            return { ...data, spent };
         },
         { enabled: !!repository },
     );

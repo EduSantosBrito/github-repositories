@@ -44,6 +44,13 @@ const Results = () => {
                     <p>Go back</p>
                 </S.ResultBack>
                 <S.ResultTitle>Results for &quot;{repository}&quot;</S.ResultTitle>
+                <S.ResultSpent>
+                    {`Results in ${new Intl.DateTimeFormat("en-us", {
+                        second: "numeric",
+                        fractionalSecondDigits: 3,
+                        hour12: false,
+                    }).format(data?.spent)} seconds`}
+                </S.ResultSpent>
                 {isLoading ? (
                     <Loader height="calc(100vh - 34.6rem)" />
                 ) : (

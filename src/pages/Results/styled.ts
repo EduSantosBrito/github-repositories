@@ -34,6 +34,14 @@ export const ResultTitle = styled.h1`
     color: var(--on-white);
 `;
 
+export const ResultSpent = styled.h2`
+    text-align: center;
+    font-family: "Sarabun";
+    font-weight: 600;
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    color: var(--on-white);
+`;
+
 export const ResultBack = styled.a`
     font-family: "Sarabun";
     font-size: 1.4rem;
