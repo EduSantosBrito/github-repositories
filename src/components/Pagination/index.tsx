@@ -29,7 +29,7 @@ const Pagination = ({ page, totalPages, onPageChange }: PaginationProps) => {
             <S.PaginationList>
                 <S.PaginationItem>
                     <S.PaginationButton
-                        aria-keyshortcuts="ArrowRight"
+                        aria-keyshortcuts="ArrowLeft"
                         disabled={page === 1}
                         aria-label="Goto Previous Page"
                         aria-disabled={page === 1}
@@ -95,7 +95,7 @@ const Pagination = ({ page, totalPages, onPageChange }: PaginationProps) => {
                 }, [])}
                 <S.PaginationItem>
                     <S.PaginationButton
-                        aria-keyshortcuts="ArrowLeft"
+                        aria-keyshortcuts="ArrowRight"
                         aria-label="Goto Next Page"
                         disabled={page === pages.length}
                         aria-disabled={page === pages.length}

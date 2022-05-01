@@ -97,7 +97,7 @@ export const PaginationButton = styled.button`
     &[aria-disabled="false"] {
         color: var(--on-dark-blue);
     }
-    &[aria-keyshortcuts="ArrowRight"] {
+    &[aria-keyshortcuts="ArrowLeft"] {
         ::before {
             content: "";
             display: inline-block;
@@ -118,7 +118,7 @@ export const PaginationButton = styled.button`
             );
         }
     }
-    &[aria-keyshortcuts="ArrowLeft"] {
+    &[aria-keyshortcuts="ArrowRight"] {
         ::after {
             content: "";
             display: inline-block;

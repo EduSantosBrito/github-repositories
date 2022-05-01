@@ -41,7 +41,9 @@ const RepositoryItem = ({ data }: RepositoryItemProps) => {
                     <h3 aria-label="Repository name">{data.name}</h3>
                 </S.RepositoryLink>
             </S.RepositoryTitle>
-            <S.RepositoryDescription aria-label="Repository description">{data.description || "Empty description"}</S.RepositoryDescription>
+            {Boolean(data.description) && (
+                <S.RepositoryDescription aria-label="Repository description">{data.description}</S.RepositoryDescription>
+            )}
             <S.RepositoryFooter>
                 <S.RepositoryStats>
                     <S.IssuesIcon aria-hidden="true" />
@@ -55,9 +57,11 @@ const RepositoryItem = ({ data }: RepositoryItemProps) => {
                     <S.ForkIcon aria-hidden="true" />
                     <p aria-label="Repository forks count">{data.forks_count}</p>
                 </S.RepositoryStats>
-                <S.RepositoryLanguage>
-                    <p aria-label="Repository main language">{data.language}</p>
-                </S.RepositoryLanguage>
+                {Boolean(data.language) && (
+                    <S.RepositoryLanguage>
+                        <p aria-label="Repository main language">{data.language}</p>
+                    </S.RepositoryLanguage>
+                )}
             </S.RepositoryFooter>
             <S.StarRepositoryStats>
                 <S.StarIcon aria-hidden="true" />

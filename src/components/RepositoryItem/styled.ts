@@ -27,7 +27,7 @@ export const RepositoryLink = styled.a`
     & > h3 {
         font-family: "Sarabun";
         color: var(--on-dark-blue);
-        font-size: clamp(1.2rem, 3vw, 2rem);
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
         font-weight: 600;
         line-height: clamp(2rem, 3vw, 2.6rem);
         &:hover {
@@ -41,6 +41,7 @@ export const RepositoryTitle = styled.div`
     justify-content: flex-start;
     align-items: center;
     gap: 0.6rem;
+    margin-bottom: 2.4rem;
 
     & > span {
         font-family: "Sarabun";
@@ -57,8 +58,8 @@ export const RepositoryDescription = styled.p`
     font-weight: 400;
     font-size: clamp(1.2rem, 3vw, 1.6rem);
     color: var(--on-white);
-    margin: 2.4rem 0 1.6rem;
-    word-break: break-all;
+    margin: 0 0 1.6rem 2.4rem;
+    word-break: break-word;
 
     @media screen and (min-width: 768px) {
         margin: 1.6rem 0;

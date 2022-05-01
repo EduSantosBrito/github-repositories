@@ -13,6 +13,17 @@ const SearchInput = ({ onChange, placeholder, onSearch }: SearchInputProps) => {
     const debouncedOnChange = useMemo(() => (onChange ? debounce(onChange, 1000) : null), []);
 
     useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.code === "Enter" && value) {
+                onSearch?.(value);
+                return;
+            }
+        };
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+    }, [value]);
+
+    useEffect(() => {
         if (onChange && debouncedOnChange) {
             debouncedOnChange(value);
         }
