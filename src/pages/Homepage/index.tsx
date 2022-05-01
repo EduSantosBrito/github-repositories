@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Header from "../../components/Header";
 import Loader from "../../components/Loader";
 import Pagination from "../../components/Pagination";
 import RepositoryItem from "../../components/RepositoryItem";
@@ -30,10 +31,10 @@ const Homepage = () => {
 
     return (
         <S.Container>
-            <S.HeaderContainer>
+            <Header>
                 <S.HeaderTitle>The best repositories are here</S.HeaderTitle>
                 <SearchInput placeholder="Search for repositories" onChange={handleRepositoryChange} onSearch={handleRepositoryChange} />
-            </S.HeaderContainer>
+            </Header>
             <S.LastRepositoriesContainer>
                 <S.LastRepositoriesTitle>Brito&apos;s repositories</S.LastRepositoriesTitle>
                 {isLoadingRepositories || isLoadingProfile ? (

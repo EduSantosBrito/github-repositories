@@ -7,6 +7,7 @@ import "./github-markdown-style.css";
 import Loader from "../../components/Loader";
 import * as S from "./styled";
 import { MouseEvent } from "react";
+import Header from "../../components/Header";
 
 const Repository = () => {
     const navigate = useNavigate();
@@ -40,9 +41,9 @@ const Repository = () => {
 
     return (
         <S.Container>
-            <S.HeaderContainer>
+            <Header small>
                 <S.HeaderTitle>{repository}</S.HeaderTitle>
-            </S.HeaderContainer>
+            </Header>
             <S.RepositoryContainer>
                 <S.ResultBack aria-label="Go to results page" onClick={handleGoBack}>
                     <p>Go back</p>

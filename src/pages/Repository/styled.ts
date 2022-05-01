@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import headerImageSrc from "../../assets/images/header.webp";
-import headerMobileImageSrc from "../../assets/images/header-mobile.webp";
 import StarIconSrc from "../../assets/icons/icon-star.svg";
 import EyeIconSrc from "../../assets/icons/icon-eye.svg";
 import ForkIconSrc from "../../assets/icons/icon-fork.svg";
@@ -9,22 +7,6 @@ import IssuesIconSrc from "../../assets/icons/icon-issues.svg";
 export const Container = styled.section`
     display: flex;
     flex-direction: column;
-`;
-
-export const HeaderContainer = styled.header`
-    background-image: url(${headerMobileImageSrc});
-    background-size: cover;
-    background-position: center center;
-    height: 14rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 7.2rem;
-
-    @media screen and (min-width: 768px) {
-        background-image: url(${headerImageSrc});
-    }
 `;
 
 export const HeaderTitle = styled.h1`
